@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Ashley, con admiración</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --fondo: #1a0f0f;
+            --dorado: #eacda3;
+            --brillo: rgba(234, 205, 163, 0.3);
+            --texto: #f9f1f0;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            width: 100%; height: 100%;
+            background-color: var(--fondo);
+            color: var(--texto);
+            font-family: 'Quicksand', sans-serif;
+            overflow: hidden;
+            touch-action: manipulation;
+        }
+
+        /* Fondo con degradado cálido y sutil */
+        .glow-bg {
+            position: fixed;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle at center, #2a1b1b 0%, var(--fondo) 100%);
+            z-index: -1;
+        }
+
+        /* Partículas de luz */
+        .sparkle {
+            position: absolute;
+            background: var(--dorado);
+            border-radius: 50%;
+            pointer-events: none;
+            box-shadow: 0 0 10px var(--dorado);
+            animation: float 4s infinite linear;
+            opacity: 0.5;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) scale(1); opacity: 0; }
+            50% { opacity: 0.6; }
+            100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+        }
+
+        .slider {
+            display: flex;
+            width: 1000vw;
+            height: 100vh;
+            transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        section {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .content {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1.5s ease;
+            max-width: 800px;
+        }
+
+        section.active .content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: var(--dorado);
+            margin-bottom: 25px;
+            text-shadow: 0 0 20px var(--brillo);
+        }
+
+        p {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        /* YouTube invisible */
+        #music-container {
+            position: absolute;
+            left: -9999px;
+            visibility: hidden;
+        }
+
+        .hint {
+            position: fixed;
+            bottom: 40px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            color: var(--dorado);
+            opacity: 0.6;
+            animation: pulse 2.5s infinite;
+        }
+
+        @keyframes pulse { 0%, 100% { opacity: 0.2; } 50% { opacity: 0.7; } }
+    </style>
+</head>
+<body onclick="nextTab()">
+
+    <div class="glow-bg"></div>
+    <div id="music-container"><div id="player"></div></div>
+
+    <div class="slider" id="mainSlider">
+        <section class="active">
+            <div class="content">
+                <h1>Para alguien muy especial: Ashley</h1>
+                <p>"En la quietud de este momento, quiero decirte lo que a veces las palabras no alcanzan a expresar... Eres luz pura."</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="content">
+                <h1>Tu esfuerzo diario</h1>
+                <p>Admiro la nobleza con la que enfrentas cada jornada en el bar-restaurante, <br> regalando tu mejor cara a pesar del cansancio.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="content">
+                <h1>Vocación de Vida</h1>
+                <p>Verte estudiar medicina es ver a alguien nacer para sanar. <br> Tu entrega a los libros es la semilla de un futuro brillante.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="content">
+                <h1>Manos que Construyen</h1>
+                <p>Eres la prueba de que se puede ser fuerte y delicada al mismo tiempo. <br> Trabajas con el alma y estudias con el corazón.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="content">
+                <h1>8 de Marzo</h1>
+                <p>Hoy celebramos tu existencia, Ashley. <br> Eres el ejemplo de la mujer que no se rinde ante ningún reto.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="content">
+                <h1>Un Brillo Constante</h1>
+                <p>Ni los turnos largos ni las materias difíciles apagan tu esencia. <br> Eres, sencillamente, una mujer excepcional.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="content">
+                <h1>Inspiración</h1>
+                <p>Verte esforzarte tanto me inspira a ser mejor. <br> Gracias por enseñarme el valor de la verdadera dedicación.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="content">
+                <h1>Tu Dulzura</h1>
+                <p>Detrás de esa mujer trabajadora y futura doctora, <br> hay un ser humano lleno de una belleza que me cautiva cada día.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="content">
+                <h1>Mi Admiración</h1>
+                <p>Este es un pequeño homenaje a tu grandeza. <br> No hay meta que no puedas alcanzar, porque tu fuerza no tiene límites.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="content">
+                <h1>Siempre contigo</h1>
+                <p>Feliz Día de la Mujer, Ashley. <br> Que este camino que recorres te lleve siempre a la felicidad que mereces.</p>
+            </div>
+        </section>
+    </div>
+
+    <div class="hint">Toca la pantalla</div>
+
+    <script>
+        let current = 0;
+        const slider = document.getElementById('mainSlider');
+        const sections = document.querySelectorAll('section');
+        let player;
+
+        // Iniciar YouTube API
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '0',
+                width: '0',
+                videoId: 'WoSKTkaEUv4', // ID de Ed Sheeran - Perfect
+                playerVars: { 'autoplay': 1, 'controls': 0, 'loop': 1, 'playlist': 'WoSKTkaEUv4' },
+                events: { 'onReady': onPlayerReady }
+            });
+        }
+
+        function onPlayerReady(event) {
+            event.target.mute(); // Empezar muteado para cumplir reglas de navegador
+            event.target.playVideo();
+        }
+
+        function nextTab() {
+            if (current === 0 && player) {
+                player.unMute();
+                player.setVolume(80);
+            }
+
+            if (current < 9) {
+                sections[current].classList.remove('active');
+                current++;
+                slider.style.transform = `translateX(-${current * 100}vw)`;
+                sections[current].classList.add('active');
+            } else {
+                current = 0;
+                slider.style.transform = `translateX(0vw)`;
+                sections.forEach(s => s.classList.remove('active'));
+                sections[0].classList.add('active');
+            }
+        }
+
+        // Crear chispas de luz aleatorias
+        setInterval(() => {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.style.left = Math.random() * 100 + "vw";
+            sparkle.style.top = "100vh";
+            const size = Math.random() * 5 + 2 + "px";
+            sparkle.style.width = size;
+            sparkle.style.height = size;
+            document.body.appendChild(sparkle);
+            setTimeout(() => sparkle.remove(), 4000);
+        }, 300);
+    </script>
+</body>
+</html>
